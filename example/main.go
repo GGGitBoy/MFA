@@ -48,7 +48,7 @@ func main() {
 
 	ga := googleAuthenticator.NewGAuth()
 
-	secret, _ := ga.CreateSecret()
+	secret := createSecret(ga)
 	fmt.Println(secret)
 
 	fmt.Println(getCode(ga, secret))

@@ -58,7 +58,6 @@ func (this *GAuth) CreateSecret(lens ...int) (string, error) {
 	}
 	for i := 0; i < length; i++ {
 		result, _ := rand.Int(rand.Reader, big.NewInt(int64(len(Table))))
-		fmt.Println(result.Int64())
 		secret = append(secret, Table[result.Int64()])
 	}
 	return strings.Join(secret, ""), nil

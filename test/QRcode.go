@@ -3,12 +3,14 @@ package main
 import (
 	"fmt"
 
-	qrcode "github.com/skip2/go-qrcode"
+	"github.com/skip2/go-qrcode"
 )
 
 func main() {
-	err := qrcode.WriteFile("otpauth://totp/kisexu@gmail.com?secret=DpI45HCEBCJK6HG7", qrcode.Medium, 256, "qr.png")
-	if err != nil {
-		fmt.Println("write error")
-	}
+
+	fmt.Println(qrcode.Encode("otpauth://totp/kisexu@gmail.com?secret=DpI45HCEBCJK6HG7", qrcode.Medium, 256))
+	// err := qrcode.WriteFile("otpauth://totp/kisexu@gmail.com?secret=DpI45HCEBCJK6HG7", qrcode.Medium, 256, "qr.png")
+	// if err != nil {
+	// 	fmt.Println("write error")
+	// }
 }

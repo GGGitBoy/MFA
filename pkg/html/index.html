@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+</head>
+<script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+<script>
+
+function MFA(val) {
+    var data = {};
+		
+	data["status"] = val;
+
+    $.ajax({
+        type:"POST",
+        url:"./enableMFA",
+        dataType:'json',
+		contentType:'application/json;charset=UTF-8',
+		data:JSON.stringify(data),
+    });
+
+}
+
+</script>
+
+<body>
+    开启MFA
+    <input type="button" value="开启" onclick="MFA('open')">
+    <input type="button" value="关闭" onclick="MFA('close')">
+</body>
+
+</html>
